@@ -14,12 +14,24 @@
 	<li class="sale important">Milk</li>
 </ul>
 <script type="text/javascript">
-	var shopping=document.getElementById("purchases");
-	var items=shopping.getElementsByTagName("*");
-	alert(items.length);
-	for(var i=0;i<items.length;i++){
-		alert(typeof items[i]);
+function getElementsByClassName(node,classname){
+	if(node.getElementsByClassName){
+		//使用现有方法
+		return node.getElementsByClassName(classname);
+	}else{
+		var results=new Array();
+		var elems=node.getElementsByTagName("*");
+		for(var i=0;i<elems.length;i++){
+			if(elems[i].className.indexOf(classname)!=-1){
+				results[results.length]=elems[i];
+			}
+		}
+		return results;
 	}
+}
+var shopping=document.getElementById("purchases");
+var sales=getElementsByClassName(shopping,"sale");
+alert(sales.length);
 </script>
 </body>
 </html>
