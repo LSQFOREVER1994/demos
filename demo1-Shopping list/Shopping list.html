@@ -14,7 +14,10 @@
 	<li class="sale important">Milk</li>
 </ul>
 <script type="text/javascript">
-	alert(typeof document.getElementById('purchases'));
+	alert(document.getElementsByTagName('li').length);
+	for(var i=0;i<document.getElementsByTagName("li").length;i++){
+		alert(typeof document.getElementsByTagName("li")[i]);
+	}
 </script>
 </body>
 </html>
