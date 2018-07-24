@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Image Gallery</title>
+	<link rel="stylesheet" type="text/css" href="layout.css" media="screen"/>
+</head>
+<body>
+<h1>Snapshots</h1>
+<ul id="imagegallery">
+	<li>
+		<a href="images/catone.jpg" onclick="showPic(this);return false;" title="A catone display">
+			<img src="images/catonemin.jpg" alt="catone"/>
+		</a>
+	</li>
+	<li>
+		<a href="images/cattwo.jpg" onclick="showPic(this); return false;"  title="A cattwo display">
+			<img src="images/cattwomin.jpg" alt="cattwo"/>
+		</a>
+	</li>
+	<li>
+		<a href="images/catthree.jpg" onclick="showPic(this); return false;" title="A catthree display">
+			<img src="images/catthreemin.jpg" alt="catthree"/>
+		</a>
+	</li>
+	<li>
+		<a href="images/catfour.jpg" onclick="showPic(this); return false;" title="A catfour display">
+			<img src="images/catfourmin.jpg" alt="catfour"/>
+		</a>
+	</li>
+</ul>
+<img id="placeholder" src="images/cat.jpg" alt="my image gallery"/>
+<p id="description">Choose an image.</p>
+<script type="text/javascript" src="showPic.js"></script>
+</body>
+</html>
