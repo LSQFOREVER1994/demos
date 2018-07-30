@@ -25,3 +25,5 @@ th,td{
 	width:10em;
 	padding:.5em;
 }
+tr:nth-child(odd) {background-color:#ffc;}
+tr:nth-child(even) {background-color:#fff;}
