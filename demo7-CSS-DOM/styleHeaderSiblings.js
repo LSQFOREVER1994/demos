@@ -8,15 +8,18 @@ function addClass(element,value) {
 		element.className=newClassName;
 	}
 }
-function styleHeaderSiblings() {
+function styleHeaderSiblings(tag,theclass) {
 	if(!document.getElementsByTagName)return false;
-	var headers=document.getElementsByTagName("h1");
+	var elems=document.getElementsByTagName(tag);
 	var elem;
-	for(var i=0;i<headers.length;i++){
-		elem=getNextElement(headers[i].nextSibling);
-		addClass(elem,"intro");
+	for(var i=0;i<elems.length;i++){
+		elem=getNextElement(elems[i].nextSibling);
+		addClass(elem,theclass);
 	}
 }
+addLoadEvent(function(){
+	styleHeaderSiblings("h1","intro");
+});
 function getNextElement(node) {
 	if(node.nodeType==1){
 		return node;
