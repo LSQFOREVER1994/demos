@@ -1,3 +1,13 @@
+function addClass(element,value) {
+	if(!element.className) {
+		element.className=value;
+	}else{
+		newClassName=element.className;
+		newClassName+="";
+		newClassName+=value;
+		element.className=newClassName;
+	}
+}
 function stripeTables() {
 	if(!document.getElementsByTagName)return false;
 	var tables=document.getElementsByTagName("table");
@@ -7,7 +17,7 @@ function stripeTables() {
 		rows=tables[i].getElementsByTagName("tr");
 		for(var j=0;j<rows.length;j++){
 			if(odd==true){
-				rows[j].style.backgroundColor="#ffc"
+				addClass(rows[j],"odd");
 				odd=false;
 			}else{
 				odd=true;
