@@ -5,6 +5,6 @@ function positionMessage() {
 	elem.style.position="absolute";
 	elem.style.left="50px";
 	elem.style.top="100px";
-	movement=setTimeout("moveMessage()",5000);
+	moveElement("message",200,100,10);
 }
 addLoadEvent(positionMessage);
