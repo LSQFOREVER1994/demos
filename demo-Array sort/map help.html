@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>map</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var list=['Delta','alpha','CHARLIE','bravo'];
+
+	var mapped=list.map(function(el,i){
+		return{index:i,value:el.toLowerCase()};
+	});
+
+	mapped.sort(function(a,b){
+		return +(a.value>b.value)||+(a.value===b.value)-1
+	});
+
+	var result=mapped.map(function(el){
+		return list[el.index];
+	});
+
+	console.log(list);
+	console.log(mapped);
+	console.log(result);
+</script>
+</body>
+</html>
