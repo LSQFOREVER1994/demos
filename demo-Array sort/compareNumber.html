@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>compareNumber</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var numbers=[4,2,5,1,3];
+	var numbersSole=[9,81,72,54,100];
+	var numbersTwo=[9,81,72,54,100,200,301];
+	numbers.sort(function(a,b){
+		return a-b;
+	});
+	numbersSole.sort(function(a,b){
+		return a-b;
+	});
+	numbersTwo.sort((a,b)=>a-b);
+	console.log(numbers);
+	console.log(numbersSole);
+	console.log(numbersTwo);
+</script>
+</body>
+</html>
