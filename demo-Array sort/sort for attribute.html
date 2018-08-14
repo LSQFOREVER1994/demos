@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>attribute</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var items=[
+	{name:'Edward',value:21},
+	{name:'Sharpe',value:37},
+	{name:'And',value:45},
+	{name:'The',value:-12},
+	{name:'Magnetic',value:20},
+	{name:'Zeros',value:37}
+	];
+	items.sort(function(a,b){
+		return (a.value-b.value)
+	});
+	items.sort(function(a,b){
+		var nameA=a.name.toUpperCase();
+		var nameB=b.name.toUpperCase();
+		if(nameA<nameB){
+			return -1;
+		}
+		if(nameA>nameB){
+			return 1;
+		}
+		return 0;
+	});
+	console.log(items);
+</script>
+</body>
+</html>
