@@ -24,7 +24,7 @@ var aqiDisplay=document.getElementById("aqi-display");
 
 function Handle(){
 	var aqiInputInt=parseInt(aqiInput.value);
-	if(!isNaN(aqiInputInt)&&aqiInputInt>1&&aqiInputInt<1000){
+	if(!isNaN(aqiInputInt)&&aqiInputInt>1&&aqiInputInt=<1000){
 		aqiDisplay.innerHTML=aqiInputInt;
 	}else{
 		aqiDisplay.innerHTML="请您输入1-1000的数字!";
