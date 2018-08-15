@@ -18,10 +18,16 @@ window.onload=function() {
   var button=document.getElementById("button");
   var aqiInput=document.getElementById("aqi-input");
   var aqiDisplay=document.getElementById("aqi-display");
-  button.onclick=function() {
+  button.onclick=function {
     if(!aqiInput.value)return false;
     aqiDisplay.innerHTML=aqiInput.value;
   }
+  function keyClick(){
+    if(event.keyCode==13){
+      document.keydown=button.onclick;
+    }
+  }
+  keyClick();
   /*	
   在注释下方写下代码
   给按钮button绑定一个点击事件
