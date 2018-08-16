@@ -14,34 +14,28 @@
 	var inputArea=document.getElementById("inputArea");
 	var btn=document.getElementById("btn");
 	var oul=document.getElementById("oul");
-	btn.addEventListener("click",function(){
+	function ManipulationLi(){
 		if(inputArea.value){
 			var oli=document.createElement("li");
+			var obtn=document.createElement("button");
+			obtn.innerHTML="删除";
 			oli.innerHTML=inputArea.value;
+			oli.appendChild(obtn);
 			oul.appendChild(oli);
+			inputArea.value="";
 			var ali=oul.getElementsByTagName("li");
-			for(var i=0;i<ali.length;i++){
-				ali[i].onclick=function(){
-					 oul.removeChild(this);
+			var abtn=oul.getElementsByTagName("button");
+			for(var i=0;i<abtn.length;i++){
+				abtn[i].onclick=function(){
+					oul.removeChild(this.parentNode);
 				}
 			}
-			inputArea.value="";
 		}
-	});
+	}
+	btn.addEventListener("click",ManipulationLi);
 	inputArea.addEventListener("keypress",function(e){
 		if(e.keyCode==13){
-		if(inputArea.value){
-			var oli=document.createElement("li");
-			oli.innerHTML=inputArea.value;
-			oul.appendChild(oli)
-			var ali=oul.getElementsByTagName("li");
-			for(var i=0;i<ali.length;i++){
-				ali[i].onclick=function(){
-					 oul.removeChild(this);
-				}
-			}			
-			inputArea.value="";			
-		}
+		ManipulationLi();
 	 }
 	});
 	inputArea.focus();
