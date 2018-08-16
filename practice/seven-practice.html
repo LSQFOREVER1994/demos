@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>add a li</title>
+</head>
+<body>
+<input id="inputArea" type="text" name="addLi">
+<button id="btn">增加</button>
+<ul id="oul">
+	
+</ul>
+<script type="text/javascript">
+	var inputArea=document.getElementById("inputArea");
+	var btn=document.getElementById("btn");
+	var oul=document.getElementById("oul");
+	btn.addEventListener("click",function(){
+		if(inputArea.value){
+			var oli=document.createElement("li");
+			oli.innerHTML=inputArea.value;
+			oul.appendChild(oli);
+			var ali=oul.getElementsByTagName("li");
+			for(var i=0;i<ali.length;i++){
+				ali[i].onclick=function(){
+					 oul.removeChild(this);
+				}
+			}
+			inputArea.value="";
+		}
+	});
+	inputArea.addEventListener("keypress",function(e){
+		if(e.keyCode==13){
+		if(inputArea.value){
+			var oli=document.createElement("li");
+			oli.innerHTML=inputArea.value;
+			oul.appendChild(oli)
+			var ali=oul.getElementsByTagName("li");
+			for(var i=0;i<ali.length;i++){
+				ali[i].onclick=function(){
+					 oul.removeChild(this);
+				}
+			}			
+			inputArea.value="";			
+		}
+	 }
+	});
+	inputArea.focus();
+</script>
+</body>
+</html>
