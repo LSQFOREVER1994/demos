@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<span>输入：</span><input id="inputArea" type="text"/>
+<button id="addBtn">添加</button>
+<ul id="todoList">
+	
+</ul>
+<script type="text/javascript">
+	var inputArea=document.getElementById("inputArea");
+	var addBtn=document.getElementById("addBtn");
+	var todoList=document.getElementById("todoList");
+	function ManipulationLi(){
+		if(inputArea.value){
+			var oli=document.createElement("li");
+			var obtn=document.createElement("button");
+			oli.innerHTML=inputArea.value;
+			obtn.innerHTML="删除";
+			oli.appendChild(obtn);
+			todoList.appendChild(oli);
+			inputArea.value="";
+		}
+	}
+	addBtn.addEventListener("click",ManipulationLi);
+	inputArea.addEventListener("keypress",function(e){
+		if(e.keyCode==13){
+			ManipulationLi();
+		}
+	});
+	todoList.addEventListener("click",function(e){
+         if(e.target.tagName.toLowerCase()==="button"){
+         	this.removeChild(e.target.parentNode);
+         }
+	});
+	inputArea.focus();
+</script>
+</body>
+</html>
