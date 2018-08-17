@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+  <ul id="source">
+    <li>北京空气质量：<b>90</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+    <li>洛阳空气质量：<b>100</b></li>
+    <li>郑州空气质量：<b>45</b></li>
+  </ul>
+  <ul id="resort">
+  </ul>
+  <button id="sort-btn">排序</button>
+<script type="text/javascript">
+function getData() {
+  var source=document.getElementById("source");
+  var aLi=source.getElementsByTagName("li");
+  var data=[];
+  for(var i=0,len=aLi.length;i<len;i++){
+    city=aLi[i].innerHTML.split("空气质量：")[0];
+    num=parseInt(aLi[i].children[0].innerHTML);
+    data.push([city,num]);
+  }
+  return data;
+}
+function sortAqiData(data) {
+  data.sort(function(a,b){
+    return b[1]-a[1];
+  });
+  return data;
+}
+function render(data) {
+  var str="";
+  var resort=document.getElementById("resort");
+  for(var i=0,len=data.length;i<len;i++){
+    str+='<li>第'+(i+1)+'名：'+data[i][0]+'空气质量：<b>'+data[i][1]+'</b></li>';
+  }
+  resort.innerHTML=str;
+}
+function btnHandle() {
+  var aqiData = getData();
+  aqiData = sortAqiData(aqiData);
+  render(aqiData);
+}
+function init() {
+  var sortBtn=document.getElementById("sort-btn");
+  sortBtn.addEventListener("click",btnHandle);
+}
+init();
+</script>
+</body>
+</html>
