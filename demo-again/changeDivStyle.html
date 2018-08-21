@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>change div style</title>
+	<style type="text/css">
+		#div1{
+			width:200px;
+			height:200px;
+			background-color:grey;
+		}
+	</style>
+</head>
+<body>
+<div id="div1">
+	
+</div>
+<script type="text/javascript">
+	var div1=document.getElementById("div1");
+	div1.onmouseover=function(){
+		div1.style.width='400px';
+		div1.style.height='400px';
+		div1.style.background="green";
+	}
+	div1.onmouseout=function(){
+		div1.style.width='200px';
+		div1.style.height='200px';
+		div1.style.background="grey";
+	}
+</script>
+</body>
+</html>
