@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>mosueAlert</title>
+	<style type="text/css">
+		#div{
+			background-color:grey;
+			width:300px;
+			height:300px;
+			display:none;
+		}
+	</style>
+</head>
+<body>
+<input id="checkbox" type="checkbox"/>
+<div id="div">
+	为了您的信息安全
+</div>
+<script type="text/javascript">
+	var checkBox=document.getElementById("checkbox");
+	var div=document.getElementById("div");
+	checkBox.onmouseover=function(){
+		div.style.display='block';
+	}
+	checkBox.onmouseout=function(){
+		div.style.display='none';
+	}
+</script>
+</body>
+</html>
