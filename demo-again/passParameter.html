@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>pass parameter</title>
+	<style type="text/css">
+		#div1{
+			width:200px;
+			height:200px;
+			background:yellow;
+		}
+	</style>
+</head>
+<body>
+
+<input type="button" value="green" id="btnGreen"/>
+<input type="button" value="red" id="btnRed"/>
+<input type="button" value="grey" id="btnGrey"/>
+<div id="div1">
+	
+</div>
+<script type="text/javascript">
+	function changeColor(color){
+		var div1=document.getElementById("div1");
+		div1.style.background=color;
+	}
+	var btnGreen=document.getElementById("btnGreen");
+	var btnRed=document.getElementById("btnRed");
+	var btnGrey=document.getElementById("btnGrey");
+	btnGreen.addEventListener("click",function(){
+		changeColor("green")
+	});
+	btnRed.addEventListener("click",function(){
+		changeColor("red")
+	});
+	btnGrey.addEventListener("click",function(){
+		changeColor("grey")
+	});
+
+</script>
+</body>
+</html>
