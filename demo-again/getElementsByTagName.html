@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>getElementsByTagName</title>
+	<style type="text/css">
+		div{width:200px;height:200px;float:left;border:1px solid black;margin:10px;}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script type="text/javascript">
+		var aDiv=document.getElementsByTagName("div");
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[0].style.background="red";
+			aDiv[1].style.background="yellow";
+			aDiv[2].style.background="blue";
+			aDiv[3].style.background="grey";
+		}
+	</script>
+</body>
+</html>
