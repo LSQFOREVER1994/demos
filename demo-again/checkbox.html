@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>checkbox</title>
+</head>
+<body>
+	<input id="btn1" type="button" value="全选"/>
+	<input id="btn2" type="button" value="反选"/>
+	<input id="btn3" type="button" value="不选"/>
+	<div id=div1>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+<input type="checkbox"/><br>
+</div>
+<script type="text/javascript">
+	var btn1=document.getElementById("btn1");
+	var btn2=document.getElementById("btn2");
+	var btn3=document.getElementById("btn3");
+	var div1=document.getElementById("div1");
+	var checkBox=div1.getElementsByTagName("input");
+    btn1.addEventListener("click",function(){
+    	for(var i=0;i<checkBox.length;i++){
+    		checkBox[i].checked=true;
+    	}
+    });
+    btn2.addEventListener("click",function(){
+    	for(var i=0;i<checkBox.length;i++){
+    		if(checkBox[i].checked==true){
+    			checkBox[i].checked=false;
+    		}else{
+    			checkBox[i].checked=true;
+    		}
+    	}
+    });
+    btn3.addEventListener("click",function(){
+    	for(var i=0,len=checkBox.length;i<len;i++){
+    		checkBox[i].checked=false;
+    	}
+    });
+</script>
+</body>
+</html>
