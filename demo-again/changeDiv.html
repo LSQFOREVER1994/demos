@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>div</title>
+	<style type="text/css">
+		#div1{
+			width:200px;
+			height:200px;
+			background:red;
+		}
+	</style>
+</head>
+<body>
+<input type="button" id="btn1" value="变宽"/>
+<input type="button" id="btn2" value="变高"/>
+<input type="button" id="btn3" value="变色"/>
+<div id="div1"></div>
+<script type="text/javascript">
+	var btn1=document.getElementById("btn1");
+	var btn2=document.getElementById("btn2");
+	var btn3=document.getElementById("btn3");
+	var div1=document.getElementById("div1");
+	function change(name,type){
+       div1["style"][name]=type;
+	}
+	btn1.addEventListener("click",function(){
+		change("width","400px");
+	});
+	btn2.addEventListener("click",function(){
+		change("height","400px");
+	});
+	btn3.addEventListener("click",function(){
+		change("background","grey");
+	});		
+</script>
+</body>
+</html>
