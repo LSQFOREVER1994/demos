@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>选项卡</title>
+	<style type="text/css">
+	    #div1 .active{background:yellow;}
+		#div1 div{
+			width:200px;
+			height:200px;
+			display:none;
+			border:1px solid #999;
+			background:#ccc;
+		}
+	</style>
+</head>
+<body>
+<div id="div1">
+	<input class="active" type="button" value="教育"/>
+	<input type="button" value="培训"/>
+	<input type="button" value="招生"/>
+	<input type="button" value="出国"/>
+	<div style="display:block;">jiaoyu</div>
+	<div>peixun</div>
+	<div>zhaosheng</div>
+	<div>chuguo</div>
+</div>
+<script type="text/javascript">
+	var div1=document.getElementById("div1");
+	ainput=div1.getElementsByTagName("input");
+	adiv=div1.getElementsByTagName("div");
+	for(var i=0;i<ainput.length;i++){
+		ainput[i].index=i;
+		ainput[i].addEventListener("click",function(){
+			for(var i=0;i<ainput.length;i++){
+				ainput[i].className='';
+				adiv[i].style.display="none";
+			}
+			this.className='active';
+			adiv[this.index].style.display="block";
+		});
+	}
+</script>
+</body>
+</html>
