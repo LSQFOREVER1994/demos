@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>get s output time</title>
+</head>
+<body>
+	<input id="txt" type="text" name="s"/>
+	<input id="btn" type="button" value="转换"/>
+	<div id="div"></div>
+<script type="text/javascript">
+	var oTxt=document.getElementById("txt");
+	var oBtn=document.getElementById("btn");
+	var oDiv=document.getElementById("div");
+	oBtn.addEventListener("click",function(){
+		var time=parseInt(oTxt.value);
+		oDiv.innerHTML=parseInt(time/60)+'m'+time%60+'s';
+	});
+</script>
+</body>
+</html>
