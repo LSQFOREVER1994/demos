@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>isNaN</title>
+</head>
+<body>
+	<input id="txt1" type="text" name="1"/>
+	<input id="txt2" type="text" name="2"/>
+	<input id="btn" type="button" value="求和">
+	<script type="text/javascript">
+		var txt1=document.getElementById("txt1");
+		var txt2=document.getElementById("txt2");
+		var btn=document.getElementById("btn");
+		btn.addEventListener("click",function(){
+			var a=parseInt(txt1.value);
+			var b=parseInt(txt2.value);
+			if(isNaN(a)){
+				alert('您输入的第一个字符有误');
+			}else if(isNaN(b)){
+				alert('您输入的第二个字符有误');
+			}else{
+				alert(a+b);
+			}
+		});
+	</script>
+</body>
+</html>
