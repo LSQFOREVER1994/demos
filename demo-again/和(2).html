@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>和</title>
+</head>
+<body>
+<input id="txt" type="text"/>
+<input id="btn" type="button" value="判断"/>
+<script type="text/javascript">
+	var oTxt=document.getElementById("txt");
+	var oBtn=document.getElementById("btn");
+	oBtn.addEventListener("click",function(){
+		var a=parseInt(oTxt.value);
+		if(a>9&&a<100){
+			alert("您输入了两位数");
+		}else{
+			alert("您没有正确输入");
+		}
+	})
+</script>
+</body>
+</html>
