@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>style</title>
+	<style type="text/css">
+		#div1{
+			width:1000px;
+			height:800px;
+			background:green;
+		}
+	</style>
+</head>
+<body>
+<div id="div1"></div>
+<script type="text/javascript">
+	function getStyle(obj,name){
+		if(obj.currentStyle){
+			alert(obj.currentStyle[name])
+		}else{
+			alert(getComputedStyle(oDiv,null)[name]);
+		}
+	}
+	var oDiv=document.getElementById("div1");
+	getStyle(oDiv,'width');
+	getStyle(oDiv,'height');
+	getStyle(oDiv,'background');
+</script>
+</body>
+</html>
