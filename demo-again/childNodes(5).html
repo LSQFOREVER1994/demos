@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>childNodes</title>
+</head>
+<body>
+<ul id="ul1">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>	
+</ul>
+<script type="text/javascript">
+	var oUl=document.getElementById("ul1");
+	alert(oUl.childNodes.length);
+    for(var i=0;i<oUl.childNodes.length;i++){
+    	if(oUl.childNodes[i].nodeType==1){
+    		oUl.childNodes[i].style.background="red";
+    	}
+    }
+</script>
+</body>
+</html>
