@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>parentNode</title>
+</head>
+<body>
+    <li>abcd<a href="javascript:;">删除</a></li>
+    <li>1234<a href="javascript:;">删除</a></li>
+    <li>wrsd<a href="javascript:;">删除</a></li>
+<script type="text/javascript">
+	var aA=document.getElementsByTagName("a");
+	for(var i=0;i<aA.length;i++){
+		aA[i].addEventListener("click",function(){
+  			this.parentNode.style.display="none";
+		});
+	}
+</script>
+</body>
+</html>
