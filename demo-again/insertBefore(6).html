@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>insertBefore</title>
+</head>
+<body>
+<input id="txt" type="text"/>
+<input id="btn" type="button" value="增加"/>
+<ul id="ul1"></ul>
+<script type="text/javascript">
+	var oTxt=document.getElementById("txt");
+	var oBtn=document.getElementById("btn");
+	var oUl=document.getElementById("ul1");
+	oBtn.addEventListener("click",function(){
+		var oLi=document.createElement("li");
+		var oUl=document.getElementById("ul1");
+		oLi.innerHTML=oTxt.value;
+		var aLi=document.getElementsByTagName("li");
+		if(aLi[0]){
+		oUl.insertBefore(oLi,aLi[0]);
+	}else{
+		oUl.appendChild(oLi);
+	}
+	   oTxt.value="";
+	   oTxt.focus();
+	});
+	oTxt.focus();
+</script>
+</body>
+</html>
