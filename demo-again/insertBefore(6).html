@@ -17,7 +17,7 @@
 		var oUl=document.getElementById("ul1");
 		oLi.innerHTML=oTxt.value;
 		var aLi=document.getElementsByTagName("li");
-		if(aLi[0]){
+		if(aLi.length>0){
 		oUl.insertBefore(oLi,aLi[0]);
 	}else{
 		oUl.appendChild(oLi);
