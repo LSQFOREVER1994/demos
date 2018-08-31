@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>change row color</title>
+</head>
+<body>
+	<table id="tab1" border="1" width="500px">
+		<thead>
+			<td>ID</td>
+			<td>姓名</td>
+			<td>年龄</td>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>冯程</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>赵天山</td>
+				<td>36</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>覃雪梅</td>
+				<td>24</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>孟月</td>
+				<td>25</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>张福林</td>
+				<td>40</td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		var oTab=document.getElementById("tab1");
+		var oldColor="";
+		for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+   			oTab.tBodies[0].rows[i].addEventListener("mouseover",function(){
+   				oldColor=this.style.background;
+   				this.style.background="yellow";
+   			});
+   			oTab.tBodies[0].rows[i].addEventListener("mouseout",function(){
+   				this.style.background=oldColor;
+   			});
+   			if(i%2){
+				oTab.tBodies[0].rows[i].style.background="grey";
+			}else{
+				oTab.tBodies[0].rows[i].style.background="green";
+			}
+		}
+	</script>
+</body>
+</html>
