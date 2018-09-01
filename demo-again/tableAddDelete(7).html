@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>table add delete</title>
+</head>
+<body>
+	姓名:<input id="name" type="text"/>
+	年龄:<input id="age" type="text"/>
+	<input id="btn1" type="button" value="添加"/>
+	<table id="tab1" border="1" width="500px">
+		<thead>
+			<td>ID</td>
+			<td>姓名</td>
+			<td>年龄</td>
+			<td>操作</td>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>冯程</td>
+				<td>32</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>赵天山</td>
+				<td>36</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>覃雪梅</td>
+				<td>24</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>孟月</td>
+				<td>25</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>张福林</td>
+				<td>40</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+<script type="text/javascript">
+	var oName=document.getElementById("name");
+	var oAge=document.getElementById("age");
+	var oBtn=document.getElementById("btn1");
+
+	var oTable=document.getElementById("tab1");
+	var id=oTable.tBodies[0].rows.length+1;
+	oBtn.addEventListener("click",function(){
+		var oTr=document.createElement("tr");
+
+		var oTd=document.createElement("td");
+		oTd.innerHTML=id++;
+		oTr.appendChild(oTd);
+
+		var oTd=document.createElement("td");
+		oTd.innerHTML=oName.value;
+		oTr.appendChild(oTd);
+
+		var oTd=document.createElement("td");
+		oTd.innerHTML=oAge.value;
+		oTr.appendChild(oTd);
+
+		var oTd=document.createElement("td");
+		oTd.innerHTML="<a href='javascript:;'>删除</a>";
+		oTr.appendChild(oTd);
+
+		oTd.getElementsByTagName('a')[0].addEventListener("click",function(){
+			oTable.tBodies[0].removeChild(this.parentNode.parentNode);
+		});	
+				oTable.tBodies[0].appendChild(oTr);		
+	});
+
+</script>
+</body>
+</html>
