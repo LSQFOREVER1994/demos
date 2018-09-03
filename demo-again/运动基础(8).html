@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<title>move</title>
+ 	<style type="text/css">
+ 		#div1{width:200px;height:200px;background:red;position:absolute;top:50px;left:0px;}
+ 	</style>
+ </head>
+ <body>
+ <input id="btn1" type="button" value="开始运动"/>
+ <div id="div1"></div>
+ <script type="text/javascript">
+ 	var oBtn=document.getElementById("btn1");
+ 	var oDiv=document.getElementById("div1");
+ 	var timer=null;
+ 	oBtn.addEventListener("click",function(){
+ 		var speed=1;
+ 		clearInterval(timer);
+ 		timer=setInterval(function(){
+ 			if(oDiv.offsetLeft>=300){
+ 				clearInterval(timer);
+ 			}else{
+ 			oDiv.style.left=oDiv.offsetLeft+speed+"px";
+ 		}
+ 		},30);
+ 	});
+ </script>
+ </body>
+ </html>
