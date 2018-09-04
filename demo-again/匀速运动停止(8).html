@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>匀速运动停止</title>
+	<style type="text/css">
+		#div1{width:50px;height:50px;background:red;position:absolute;left:0px;}
+		#div2{width:1px;height:600px;background:green;position:absolute;top:0;left:100px;}
+		#div3{width:1px;height:600px;background:blue;position:absolute;top:0;left:300px;}		
+	</style>
+</head>
+<body>
+<input id="btn1" type="button" value="到100"/>
+<input id="btn2" type="button" value="到300"/>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<script type="text/javascript">
+	var timer=null;
+	var oBtn1=document.getElementById("btn1");
+	var oBtn2=document.getElementById("btn2");
+	function startMove(iTarget){
+		clearInterval(timer);
+		var oDiv=document.getElementById("div1");
+		timer=setInterval(function(){
+			var speed=0;
+			if(oDiv.offsetLeft<iTarget)
+				{speed=7;}
+			else
+				{speed=-7}
+			if(Math.abs(iTarget-oDiv.offsetLeft)<=7)
+			{
+				clearInterval(timer);
+				oDiv.style.left=iTarget+"px";
+			}
+			else
+			{
+				oDiv.style.left=oDiv.offsetLeft+speed+"px";
+			}
+		},30);
+	}
+	oBtn1.addEventListener("click",function(){
+		startMove(100);
+	});
+	oBtn2.addEventListener("click",function(){
+		startMove(300);
+	});
+</script>
+</body>
+</html>
