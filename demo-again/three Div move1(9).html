@@ -14,6 +14,7 @@
 <script type="text/javascript">
 	var aDiv=document.getElementsByTagName('div');
 	for(var i=0;i<aDiv.length;i++){
+		aDiv[i].timer=null;
 		aDiv[i].onmouseover=function(){
 			startMove(this,400);
 		}
@@ -21,14 +22,14 @@
 			startMove(this,100);
 		}
 	}
-	var timer=null;
+	//var timer=null;
 	function startMove(obj,iTarget){
-		clearInterval(timer);
-		timer=setInterval(function(){
+		clearInterval(obj.timer);
+		obj.timer=setInterval(function(){
 			var speed=(iTarget-obj.offsetWidth)/6;
 			speed=speed>0?Math.ceil(speed):Math.floor(speed);
 			if(obj.offsetWidth==iTarget){
-				clearInterval(timer);
+				clearInterval(obj.timer);
 			}else{
 				obj.style.width=obj.offsetWidth+speed+"px";
 			}
