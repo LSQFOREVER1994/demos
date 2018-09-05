@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>four div</title>
+	<style type="text/css">
+		div{width:100px;height:100px;margin:20px;float:left;background:red;filter:alpha(opacity:30);opacity:0.3;}
+	</style>
+</head>
+<body>
+<div id="div1">变高</div>
+<div id="div2">变宽</div>
+<script type="text/javascript">
+	function getStyle(obj,name)
+	{
+		if(obj.currentStyle)
+		{
+			return obj.currentStyle[name];
+		}
+		else
+		{
+			return getComputedStyle(obj,false)[name];
+		}
+	}
+	function startMove(obj,attr,iTarget)
+	{
+		clearInterval(obj.timer);
+		obj.timer=setInterval(function(){
+			var cur=parseInt(getStyle(obj,attr));
+			var speed=(iTarget-cur)/6;
+			speed=speed>0?Math.ceil(speed):Math.floor(speed);
+			if(cur==iTarget){
+				clearInterval(obj.timer);
+			}else{
+				obj.style[attr]=cur+speed+"px";
+			}
+		},30);
+	}
+	var oDiv1=document.getElementById('div1');
+	oDiv1.addEventListener("mouseover",function(){
+		startMove(this,"height",400);
+	});
+	oDiv1.addEventListener("mouseout",function(){
+		startMove(this,"height",100);
+	});	
+	var oDiv2=document.getElementById('div2');
+	oDiv2.addEventListener("mouseover",function(){
+		startMove(this,"width",400);
+	});
+	oDiv2.addEventListener("mouseout",function(){
+		startMove(this,"width",100);
+	});	
+</script>
+</body>
+</html>
