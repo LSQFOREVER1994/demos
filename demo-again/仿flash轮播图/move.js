@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>four div</title>
-	<style type="text/css">
-		div{width:100px;height:100px;margin:20px;float:left;background:red;filter:alpha(opacity:30);opacity:0.3;border:1px solid green;font-size:14px;}
-	</style>
-</head>
-<body>
-<input id="txt1" type="text"/>
-<div id="div1"></div>
-<script type="text/javascript">
 	function getStyle(obj,name)
 	{
 		if(obj.currentStyle)
@@ -51,13 +38,3 @@
 			}
 		},30);
 	}
-	var oDiv1=document.getElementById('div1');
-	oDiv1.addEventListener("mouseover",function(){
-		startMove(this,"opacity",100);
-	});
-	oDiv1.addEventListener("mouseout",function(){
-		startMove(this,"opacity",30);
-	});	
-</script>
-</body>
-</html>
