@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>small trouble move</title>
+	<style type="text/css">
+		#div1{width:100px;height:100px;background:red;}
+	</style>
+</head>
+<body>
+<input id="btn1" type="button" value="运动"/>
+<div id="div1"></div>
+<script type="text/javascript">
+		function getStyle(obj,name)
+	{
+		if(obj.currentStyle)
+		{
+			return obj.currentStyle[name];
+		}
+		else
+		{
+			return getComputedStyle(obj,false)[name];
+		}
+	}
+	function startMove(obj,attr,iTarget,fnEnd)
+	{
+		clearInterval(obj.timer);
+		obj.timer=setInterval(function(){
+			if(attr=='opacity')
+			{
+				var cur=Math.round(parseFloat(getStyle(obj,attr))*100);
+			}
+			else
+			{
+				var cur=parseInt(getStyle(obj,attr));
+			}
+			var speed=(iTarget-cur)/6;
+			speed=speed>0?Math.ceil(speed):Math.floor(speed);
+			if(cur==iTarget)
+			{
+				clearInterval(obj.timer);
+				if(fnEnd)fnEnd();
+			}
+			else
+			{
+				if(attr=='opacity')
+				{
+					obj.style.filter='alpha(opacity:'+(cur+speed)+')';
+					obj.style.opacity=(cur+speed)/100;
+				}
+				else
+				{
+					obj.style[attr]=cur+speed+"px";
+				}
+			}
+		},30);
+	}
+	var oBtn=document.getElementById("btn1");
+	var oDiv=document.getElementById("div1");
+	oBtn.addEventListener("click",function(){
+		startMove(oDiv,"width",300);
+		startMove(oDiv,"height",300);
+		/*-oDiv.style.width="300px";
+		oDiv.style.height="300px";*/
+	});
+</script>
+</body>
+</html>
