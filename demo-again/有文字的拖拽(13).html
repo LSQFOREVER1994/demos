@@ -20,37 +20,16 @@ jfpksdofk;''
 		disX=oEvent.clientX-oDiv.offsetLeft;
 		disY=oEvent.clientY-oDiv.offsetTop;
 		if(oDiv.setCapture){
-	oDiv.onmousemove=function(ev){
-		var oEvent=ev||event;
-		var l=oEvent.clientX-disX;
-		var t=oEvent.clientY-disY;
-		if(l<0)
-		{
-			l=0;
-		}
-		else if(l>document.documentElement.clientWidth-oDiv.offsetWidth)
-		{
-			l=document.documentElement.clientWidth-oDiv.offsetWidth;
-		}
-		if(t<0)
-		{
-			t=0;
-		}
-		else if(t>document.documentElement.clientHeight-oDiv.offsetHeight)
-		{
-			t=document.documentElement.clientHeight-oDiv.offsetHeight;
-		}
-		oDiv.style.left=l+"px";
-		oDiv.style.top=t+"px";
-	}
-	oDiv.onmouseup=function(){
-		oDiv.onmousemove=null;
-		oDiv.onmouseup=null;
-	}
+	oDiv.onmousemove=mouseMove;
+	oDiv.onmouseup=mouseUp;
 	oDiv.setCapture();
 }
 else{
-	document.onmousemove=function(ev){
+	document.onmousemove=mouseMove;
+	document.onmouseup=mouseUp;
+
+	}
+	function mouseMove(ev){
 		var oEvent=ev||event;		var l=oEvent.clientX-disX;
 		var t=oEvent.clientY-disY;
 		if(l<0)
@@ -72,11 +51,13 @@ else{
 		oDiv.style.left=l+"px";
 		oDiv.style.top=t+"px";
 	}
-	oDiv.onmouseup=function(){
-		oDiv.onmousemove=null;
-		oDiv.onmouseup=null;
+	function mouseUp(){
+		this.onmousemove=null;
+		this.onmouseup=null;
+		if(oDiv.releaseCapture)
+		{
+		oDiv.releaseCapture();
 	}
-
 	}
 	return false;
 }
