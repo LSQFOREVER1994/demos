@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>自定义滚动</title>
+	<style type="text/css">
+		#parent{width:600px;height:20px;background:#ccc;position:relative;margin:10px auto;}
+		#div1{width:20px;height:20px;background:red;position:absolute;left:0;top:0;}
+		#div2{width:400px;height:300px;border:1px solid black;overflow:hidden;position:relative;}
+		#div3{position:absolute;left:0;top:0;padding:4px;}
+	</style>
+</head>
+<body>
+<div id="parent">
+	<div id="div1"></div>
+</div>
+<div id="div2">
+	<div id="div3">
+	内容
+	   绝地求生全军出击国内目前先出的手机版本，先体验电脑版本的只能用助手在电脑上玩了，下面小编教大家怎么在电脑上玩绝地求生全军出击。供玩家参考！
+
+工具/原料
+绝地求生全军出击
+方法/步骤
+1
+百度搜索腾讯手游助手，认准官网字样，点击进入，如下图所示
+电脑上怎么玩绝地求生全军出击
+2
+进入官网我们选择傲引擎版本下载，然后自行完成安装，小编这里不再赘述，如果遇到困难，请参考下面的经验引用，如下图所示   绝地求生全军出击国内目前先出的手机版本，先体验电脑版本的只能用助手在电脑上玩了，下面小编教大家怎么在电脑上玩绝地求生全军出击。供玩家参考！
+
+工具/原料
+绝地求生全军出击
+方法/步骤
+1
+百度搜索腾讯手游助手，认准官网字样，点击进入，如下图所示
+电脑上怎么玩绝地求生全军出击
+2
+进入官网我们选择傲引擎版本下载，然后自行完成安装，小编这里不再赘述，如果遇到困难，请参考下面的经验引用，如下图所示
+内容
+	   绝地求生全军出击国内目前先出的手机版本，先体验电脑版本的只能用助手在电脑上玩了，下面小编教大家怎么在电脑上玩绝地求生全军出击。供玩家参考！
+
+工具/原料
+绝地求生全军出击
+方法/步骤
+1
+百度搜索腾讯手游助手，认准官网字样，点击进入，如下图所示
+电脑上怎么玩绝地求生全军出击
+2
+进入官网我们选择傲引擎版本下载，然后自行完成安装，小编这里不再赘述，如果遇到困难，请参考下面的经验引用，如下图所示   绝地求生全军出击国内目前先出的手机版本，先体验电脑版本的只能用助手在电脑上玩了，下面小编教大家怎么在电脑上玩绝地求生全军出击。供玩家参考！
+
+工具/原料
+绝地求生全军出击
+方法/步骤
+1
+百度搜索腾讯手游助手，认准官网字样，点击进入，如下图所示
+电脑上怎么玩绝地求生全军出击
+2
+进入官网我们选择傲引擎版本下载，然后自行完成安装，小编这里不再赘述，如果遇到困难，请参考下面的经验引用，如下图所示
+内容
+	   绝地求生全军出击国内目前先出的手机版本，先体验电脑版本的只能用助手在电脑上玩了，下面小编教大家怎么在电脑上玩绝地求生全军出击。供玩家参考！
+
+工具/原料
+绝地求生全军出击
+方法/步骤
+1
+百度搜索腾讯手游助手，认准官网字样，点击进入，如下图所示
+电脑上怎么玩绝地求生全军出击
+2
+进入官网我们选择傲引擎版本下载，然后自行完成安装，小编这里不再赘述，如果遇到困难，请参考下面的经验引用，如下图所示   绝地求生全军出击国内目前先出的手机版本，先体验电脑版本的只能用助手在电脑上玩了，下面小编教大家怎么在电脑上玩绝地求生全军出击。供玩家参考！
+
+工具/原料
+绝地求生全军出击
+方法/步骤
+1
+百度搜索腾讯手游助手，认准官网字样，点击进入，如下图所示
+电脑上怎么玩绝地求生全军出击
+2
+进入官网我们选择傲引擎版本下载，然后自行完成安装，小编这里不再赘述，如果遇到困难，请参考下面的经验引用，如下图所示
+</div>
+</div>
+<script type="text/javascript">
+	var oDiv=document.getElementById("div1");
+	var oDiv2=document.getElementById("div2");
+	var oDiv3=document.getElementById("div3");
+	var oParent=document.getElementById("parent");
+	var disX=0;
+	oDiv.onmousedown=function(ev){
+		oEvent=ev||event;
+		disX=oEvent.clientX-oDiv.offsetLeft;
+	document.onmousemove=function(ev){
+		var oEvent=ev||event;
+		var l=oEvent.clientX-disX;
+		if(l<0)
+		{
+			l=0;
+		}
+		else if(l>oParent.offsetWidth-oDiv.offsetWidth)
+		{
+			l=oParent.offsetWidth-oDiv.offsetWidth;
+		}
+		oDiv.style.left=l+"px";
+		var scale=l/(oParent.offsetWidth-oDiv.offsetWidth)
+		oDiv3.style.top=-scale*(oDiv3.offsetHeight-oDiv2.offsetHeight)+"px";
+	}
+	document.onmouseup=function(){
+		document.onmousemove=null;
+		document.onmouseup=null;
+	}
+	return false;
+	}
+</script>
+</body>
+</html>
