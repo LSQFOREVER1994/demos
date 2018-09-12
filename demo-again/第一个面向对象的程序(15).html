@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>第一个面向对象的程序</title>
+</head>
+<body>
+<script type="text/javascript">
+	function createPerson(name,qq)
+	{
+		var obj=new Object();
+		obj.name=name;
+		obj.qq=qq;
+		obj.showName=function()
+		{
+			alert("我的名字叫："+this.name);
+		}
+		obj.showQQ=function()
+		{
+			alert("我的QQ号是："+this.qq);
+		}
+		return obj;
+	}
+	var obj=createPerson("blue","4646363");
+	var obj2=createPerson("张灿","5436464");
+	obj.showName();
+	obj.showQQ();
+	obj2.showName();
+	obj2.showQQ();
+</script>
+</body>
+</html>
