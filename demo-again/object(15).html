@@ -1,0 +1,25 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<title>Object</title>
+ </head>
+ <body>
+ <script type="text/javascript">
+ 	var obj=new Object();
+
+ 	obj.name='blue';
+ 	obj.qq='56415313';
+ 	obj.showName=function()
+ 	{
+ 		alert("我的名字叫："+this.name);
+ 	}
+ 	obj.showQQ=function()
+ 	{
+ 		alert("我的QQ号是："+this.qq);
+ 	}
+ 	obj.showName();
+ 	obj.showQQ();
+ </script>
+ </body>
+ </html>
