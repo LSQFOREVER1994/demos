@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>prototype</title>
+</head>
+<body>
+<script type="text/javascript">
+	var arr1=new Array(12,55,34,78,96);
+	var arr2=new Array(12,967,34,546,96);
+	Array.prototype.sum=function()
+	//arr1.sum=function()//行间样式
+	{
+		var result=0;
+		for(var i=0;i<this.length;i++)
+		{
+			result+=this[i];
+		}
+		return result;
+	}
+	alert(arr1.sum());
+	alert(arr2.sum());
+</script>
+</body>
+</html>
