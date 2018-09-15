@@ -8,7 +8,7 @@
 		body{height:2000px;}
 </style>
 <script type="text/javascript">
-	window.onscroll=function(){
+	window.onscroll=window.onresize=function(){
 		var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
 		var oDiv=document.getElementById("div1");
 		oDiv.style.top=document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop+"px";
