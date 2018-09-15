@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>运行</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oText=document.getElementById("text1");
+			var oBtn=document.getElementById("btn1");
+			oBtn.onclick=function(){
+				var oNewwin=window.open("about:blank","_blank");
+				oNewwin.document.write(oText.value);
+			}
+		}
+	</script>
+</head>
+<body>
+<textarea id="text1"></textarea><br>
+<input id="btn1" type="button" value="运行"/>
+</body>
+</html>
