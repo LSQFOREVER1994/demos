@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>偷小说</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oText1=document.getElementById("text1");
+			var oText2=document.getElementById("text2");
+			var oBtn=document.getElementById("btn1");
+			oBtn.onclick=function(){
+				var re=/<[^<>]+>/g;
+				oText2.value=oText1.value.replace(re,"");
+			}
+		}
+	</script>
+</head>
+<body>
+<textarea id="text1" rows="10" cols="40"></textarea><br>
+<input id="btn1" type="button" value="转换"/><br>
+<textarea id="text2" rows="10" cols="40"></textarea>
+</body>
+</html>
