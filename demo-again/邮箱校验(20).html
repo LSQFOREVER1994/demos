@@ -8,7 +8,7 @@
 			var oText1=document.getElementById("text1");
 			var oBtn=document.getElementById("btn1");
 			oBtn.onclick=function(){
-				var re=/\w+@[a-z0-9]+\.[a-z]+/i;
+				var re=/^\w+@[a-z0-9]+\.[a-z]+$/i;
 				if(re.test(oText1.value)){
 					alert("合法的邮箱");
 				}else{
