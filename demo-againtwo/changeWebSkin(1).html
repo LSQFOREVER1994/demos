@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>change web skin</title>
+	<style type="text/css">
+		#btn1{width:200px;height:200px;}
+		#btn2{width:200px;height:200px;}
+	</style>
+	<link id="css" rel="stylesheet" type="text/css" href="css1.css">
+	<script type="text/javascript">
+		window.onload=function(){
+		var oBtn1=document.getElementById("btn1");
+		var oBtn2=document.getElementById("btn2");
+		var oCss=document.getElementById("css");		
+		oBtn1.addEventListener("click",function(){
+			oCss.setAttribute("href","css1.css");
+		});
+		oBtn2.addEventListener("click",function(){
+			oCss.setAttribute("href","css2.css");
+		});
+		}
+	</script>
+</head>
+<body>
+<input type="button" id="btn1" value="皮肤一"/>
+<input type="button" id="btn2" value="皮肤二"/>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>change div style</title>
+	<style type="text/css">
+		#div1{width:200px;height:200px;background:green;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDiv=document.getElementById("div1");
+			oDiv.addEventListener("mouseover",function(){
+				oDiv.style.width="400px";
+				oDiv.style.height="400px";
+				oDiv.style.background="grey";
+			});
+			oDiv.addEventListener("mouseout",function(){
+				oDiv.style.width="200px";
+				oDiv.style.height="200px";
+				oDiv.style.background="green";
+			});
+		}
+	</script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
