@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>arrconcat</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var a=[1,2,3];
+			var b=[4,5,6];
+			alert(a.concat(b));
+			alert(b.concat(a));
+			var c=[1,2,3,4];
+			alert(c.join("--"));
+			var d=c.join("--");
+			alert(d.split('--'));
+			var e=[1,6,8,9,4,89];
+			alert(e.sort());
+			var f=['width','height','uzi','ming','deft','dade'];
+			alert(f.sort());
+			var g=[12,8,112,99,71];
+			alert(g.sort());
+			g.sort(function(a,b){
+				return a-b;
+			});
+			alert(g);
+			g.sort(function(n1,n2){
+		if(n1>n2)
+		{
+			return -1;
+		}
+		else if(n1<n2)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+		alert(g);
+	});
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

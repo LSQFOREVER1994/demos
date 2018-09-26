@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>arguments</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			function sum(){
+				//alert(typeof arguments);
+				//alert(arguments.length);
+				//alert(arguments[0]);
+				var result=0;
+				for(var i=0;i<arguments.length;i++){
+					result+=arguments[i];
+				}
+				return result;
+			}
+			alert(sum(1,2,3));
+			alert(sum(89,11,1100));
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>秒转时间</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oText=document.getElementById("text1");
+			var oBtn=document.getElementById("btn");
+			var oDiv=document.getElementById("div1");
+			oBtn.addEventListener("click",function(){
+				var time=oText.value;
+				oDiv.innerHTML=parseInt(time/60)+"m"+time%60+'s';
+			});
+		}
+	</script>
+</head>
+<body>
+<input type="text" id="text1"/>
+<input type="button" value="转换" id="btn"/>
+<div id="div1"></div>
+</body>
+</html>
