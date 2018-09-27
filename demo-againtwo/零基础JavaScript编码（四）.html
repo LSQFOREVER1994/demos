@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>four</title>
+</head>
+<body>
+<div>
+	<label>城市名称：<input type="text" id="aqi-city-input"></label><br>
+	<label>空气质量指数：<input type="text" id="aqi-value-input"></label><br>
+	<button id="add-btn">确认添加</button>
+</div>
+	<table id="aqi-table"></table>
+	<script type="text/javascript">
+		var aqiData={};
+		function addAqiDate(){
+		var aqiCityInput=document.getElementById("aqi-city-input");
+		var aqiValueInput=document.getElementById("aqi-value-input");
+		var city=aqiCityInput.value;
+		var num=aqiValueInput.value;
+		aqiData[city]=num;
+		}
+		function renderAqiList(){
+			var aqiTable=document.getElementById("aqi-table");
+			var str="<tr><td>城市</td><td>空气质量</td><td>操作</td></tr>";
+			for(var city in aqiData){
+				str+='<tr><td>'+city+'</td><td>'+aqiData[city]+'</td><td><button>删除</button></td>';
+			}
+			aqiTable.innerHTML=str;
+		}
+		function addBtnHandle(){
+			addAqiDate();
+			renderAqiList();
+		}
+		function delBtnHandle(city){
+			delete aqiData[city];
+			renderAqiList();
+		}
+		function init(){
+			var addBtn=document.getElementById("add-btn");
+			var aqiTable=document.getElementById("aqi-table");
+			addBtn.addEventListener("click",addBtnHandle);
+		}
+		init();
+	</script>
+</body>
+</html>
