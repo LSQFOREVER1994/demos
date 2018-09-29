@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>creatElement</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oTxt=document.getElementById("txt1");
+			var oBtn=document.getElementById("btn1");
+			var oUl=document.getElementById("ul1");
+			oBtn.addEventListener("click",function(){
+				var oLi=document.createElement("li");
+				oLi.innerHTML=oTxt.value;
+				oUl.appendChild(oLi);
+				oTxt.value="";
+				oTxt.focus();
+			});
+			oTxt.focus();
+		}
+	</script>
+</head>
+<body>
+<input type="text" id="txt1"/>
+<input type="button" value="创建语句" id="btn1"/>
+<ul id="ul1"></ul>
+</body>
+</html>
