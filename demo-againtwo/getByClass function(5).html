@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>getByClass</title>
+	<script src="getByClass(5).js"></script>
+	<script type="text/javascript">
+			window.onload=function(){
+			var oUl=document.getElementById("ul1");
+			var aBox=getByClass(oUl,"box")
+			for(var i=0;i<aBox.length;i++){
+				aBox[i].style.background="grey";
+			}
+		}
+	</script>
+</head>
+<body>
+<ul id="ul1">
+	<li></li>
+	<li class="box"></li>
+	<li></li>
+	<li class="box"></li>
+</ul>
+</body>
+</html>

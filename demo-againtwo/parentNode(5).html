@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>parentNode</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var aA=document.getElementsByTagName("a");
+			for(var i=0;i<aA.length;i++){
+				aA[i].onclick=function(){
+					this.parentNode.style.display='none';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+<ul id="ul1">
+	<li>abcdef<a href="javascript:;">隐藏</a></li>
+	<li>123456<a href="javascript:;">隐藏</a></li>
+	<li>ioiojk<a href="javascript:;">隐藏</a></li>
+</ul>
+</body>
+</html>
