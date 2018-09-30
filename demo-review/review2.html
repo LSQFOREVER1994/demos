@@ -6,39 +6,29 @@
   </head>
 <body>
 
-  <h3>污染城市列表</h3>
-  <ul id="aqi-list">
-<!--   
-    <li>第一名：福州（样例），10</li>
-  	<li>第二名：福州（样例），10</li> -->
-  </ul>
+  <label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
+  <button id="button">确认填写</button>
+
+  <div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
 
 <script type="text/javascript">
 
-var aqiData = [
-  ["北京", 90],
-  ["上海", 50],
-  ["福州", 10],
-  ["广州", 50],
-  ["成都", 90],
-  ["西安", 100]
-];
-(function(){
-  aqiData.sort(function(a,b){
-    return b[1]-a[1];
+(function() {
+  var aqiInput=document.getElementById("aqi-input");
+  var btn=document.getElementById("button");
+  var aqiDisplay=document.getElementById("aqi-display");
+  btn.addEventListener("click",function(){
+    aqiDisplay.innerHTML=aqiInput.value;
   });
-  var aqiList=document.getElementById("aqi-list");
-  var str="";
-  for(var i=0,len=aqiData.length;i<len;i++){
-    str+='<li>第'+(i+1)+'名：'+aqiData[i][0]+','+aqiData[i][1]+'</li>'
-  }
-    aqiList.innerHTML=str;
-  /*
-  在注释下方编写代码
-  遍历读取aqiData中各个城市的数据
-  将空气质量指数大于60的城市显示到aqi-list的列表中
+  /*	
+  在注释下方写下代码
+  给按钮button绑定一个点击事件
+  在事件处理函数中
+  获取aqi-input输入的值，并显示在aqi-display中
   */
+
 })();
+
 </script>
 </body>
 </html>
